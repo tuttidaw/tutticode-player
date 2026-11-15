@@ -1,0 +1,36 @@
+# Every program on the examples site compiles on today's TuttiDAW, and every
+# page and README link is in place.
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '37 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  TUTTICODE_BROWSER_ARGS: --no-sandbox
+  TUTTICODE_BROWSER: /usr/bin/google-chrome
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Pages and links
+        run: node scripts/validate.mjs
+      - name: Programs compile
+        run: |
+          for f in out/programs/*.tc; do
+            echo "== $f"
+            npx -y tutticode@latest check "$f"
+          done

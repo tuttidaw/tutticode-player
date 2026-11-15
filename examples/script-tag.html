@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Script tag · @tuttidaw/embed</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- 1. The SDK: v1.js is always the latest 1.x (pin one with v1-1.1.0.js). -->
+  <script src="https://tuttidaw.com/embed/v1.js" defer></script>
+</head>
+<body>
+  <p><a href="../">← all examples</a></p>
+  <h1>Script tag</h1>
+  <p>Load <code>v1.js</code>, then write <code>&lt;tuttidaw-code&gt;</code> anywhere. The program goes in the <code>code</code> attribute (single quotes, so the program's own double quotes need no escaping).</p>
+
+  <!-- 2. A card. theme, loops, show-code, height and lang are optional. -->
+  <tuttidaw-code theme="dark" loops="4" show-code code='setcpm(31)
+drums: s("bd*4, [~ hh]*4, ~ cp ~ cp").bank("tr909")
+bass: note("<[a1 ~ a1 a2] [f1 ~ f1 f2] [c2 ~ c2 c3] [g1 ~ g1 g2]>").s("sawtooth").lpf(600)
+master.fx("Limiter")'></tuttidaw-code>
+
+  <h2>The markup</h2>
+  <pre>&lt;script src="https://tuttidaw.com/embed/v1.js" defer&gt;&lt;/script&gt;
+
+&lt;tuttidaw-code theme="dark" loops="4" show-code code='setcpm(31)
+drums: s("bd*4, [~ hh]*4, ~ cp ~ cp").bank("tr909")
+bass: note("&lt;[a1 ~ a1 a2] [f1 ~ f1 f2] [c2 ~ c2 c3] [g1 ~ g1 g2]&gt;").s("sawtooth").lpf(600)
+master.fx("Limiter")'&gt;&lt;/tuttidaw-code&gt;</pre>
+
+  <h2>A published snippet, by id</h2>
+  <p>On tuttidaw.com/code, <em>Embed → Publish</em> gives a fixed id: <code>&lt;tuttidaw-code snippet="aB3dE5fG7hJ9"&gt;&lt;/tuttidaw-code&gt;</code>. A snippet never changes; an edit is published under a new id.</p>
+</body>
+</html>

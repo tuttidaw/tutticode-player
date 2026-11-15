@@ -1,0 +1,52 @@
+:root {
+  color-scheme: light dark;
+  --fg: #e9e6df;
+  --bg: #111111;
+  --muted: #a8a49b;
+  --accent: #f2b233;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+body {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 32px 20px 64px;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+a { color: var(--accent); }
+h1 { margin: 0 0 8px; font-size: 2rem; }
+h2 { margin: 0 0 8px; font-size: 1.05rem; color: var(--muted); font-weight: 600; }
+header p { max-width: 720px; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 16px 0 32px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 28px; }
+section { min-width: 0; }
+tuttidaw-code { display: block; }
+pre {
+  background: #1d1d1d;
+  border-radius: 6px;
+  padding: 12px 14px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+.log {
+  height: 180px;
+  overflow-y: auto;
+  font: 0.8rem ui-monospace, monospace;
+  background: #1d1d1d;
+  border-radius: 6px;
+  padding: 8px 12px;
+  white-space: pre-wrap;
+}
+button {
+  font: inherit;
+  padding: 6px 14px;
+  margin: 12px 8px 12px 0;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #222;
+  color: var(--fg);
+  cursor: pointer;
+}
+footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 480px) { .gallery { grid-template-columns: 1fr; } }

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@tuttidaw/embed: playable music code in any web page</title>
+  <meta name="description" content="Live examples of @tuttidaw/embed: TuttiCode music cards you can play, read and remix, embedded with one script tag.">
+  <link rel="stylesheet" href="examples/style.css">
+  <script src="https://tuttidaw.com/embed/v1.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>@tuttidaw/embed</h1>
+    <p>Put a playable <a href="https://tuttidaw.com/code">TuttiCode</a> card in any web page: a short music program with a Play button, its code and a Remix link. One script tag, no dependencies; the audio engine runs in the card's iframe, never in your page.</p>
+    <nav>
+      <a href="https://github.com/tuttidaw/embed">GitHub</a>
+      <a href="https://www.npmjs.com/package/@tuttidaw/embed">npm</a>
+      <a href="examples/script-tag.html">Script tag</a>
+      <a href="examples/iframe.html">Iframe only</a>
+      <a href="examples/controls.html">Methods and events</a>
+      <a href="examples/react.html">React</a>
+      <a href="examples/vue.html">Vue</a>
+    </nav>
+  </header>
+
+  <main class="gallery">
+    <section>
+      <h2>House groove</h2>
+      <tuttidaw-code theme="dark" loops="8" code='setcpm(31)
+drums: s("bd*4, [~ hh]*4, ~ cp ~ cp").bank("tr909")
+bass: note("<[a1 ~ a1 a2] [f1 ~ f1 f2] [c2 ~ c2 c3] [g1 ~ g1 g2]>").s("sawtooth").lpf(600)
+chords: chord("<Am9 F^7 C^7 G6>").voicing().struct("~ x ~ x").s("gm_epiano1").fx("Reverb")
+master.fx("Limiter")'></tuttidaw-code>
+    </section>
+
+    <section>
+      <h2>Lo-fi chords</h2>
+      <tuttidaw-code theme="dark" loops="4" code='setcpm(20)
+drums: s("bd ~ [~ bd] ~, ~ sd, hh*8").bank("tr707").gain(0.8)
+keys: chord("<Fm9 Bbm9 Eb^9 Ab^7>").voicing().s("gm_epiano1").fx("Reverb")
+bass: note("<f1 bb1 eb1 ab1>").s("gm_acoustic_bass")
+master.fx("Limiter")'></tuttidaw-code>
+    </section>
+
+    <section>
+      <h2>Pentatonic koto</h2>
+      <tuttidaw-code theme="light" loops="4" code='setcpm(22)
+koto: n("0 2 4 <7 5> 4 2").scale("D5:minor:pentatonic").s("gm_koto")
+bass: note("<d2 a1 bb1 c2>").s("gm_acoustic_bass")
+pad: chord("<Dm Am Bb C>").voicing().s("gm_pad_warm").gain(0.4)'></tuttidaw-code>
+    </section>
+
+    <section>
+      <h2>Acid line</h2>
+      <tuttidaw-code theme="light" loops="8" show-code code='setcpm(32)
+drums: s("bd*4, [~ hh]*4").bank("tr808")
+acid: note("c2 c3 eb2 c2 g2 c2 bb1 c3").s("sawtooth").lpf(sine.range(300, 2400).slow(4)).lpq(12).gain(0.6)
+master.fx("Limiter")'></tuttidaw-code>
+    </section>
+  </main>
+
+  <footer>
+    <p>Write your own at <a href="https://tuttidaw.com/code">tuttidaw.com/code</a>, then <em>Embed</em> gives you the snippet. Source of these pages: <a href="https://github.com/tuttidaw/embed">tuttidaw/embed</a>. MIT.</p>
+  </footer>
+</body>
+</html>

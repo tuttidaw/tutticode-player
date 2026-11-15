@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iframe only · @tuttidaw/embed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p><a href="../">← all examples</a></p>
+  <h1>Iframe only (no script)</h1>
+  <p>Where you cannot add a script (a CMS, a forum, a notebook), embed the player page directly. The program is in the URL fragment: <code>#</code> + <code>encodeURIComponent(base64(utf8(code)))</code>, the same as strudel.cc share links, or the compact <code>#z=</code> form TuttiDAW's share menu gives. Without the SDK the iframe does not resize itself, so give it a height.</p>
+
+  <iframe
+    src="https://tuttidaw.com/embed/code?theme=dark#c2V0Y3BtKDIwKQpkcnVtczogcygiYmQgfiBbfiBiZF0gfiwgfiBzZCwgaGgqOCIpLmJhbmsoInRyNzA3IikuZ2FpbigwLjgpCmtleXM6IGNob3JkKCI8Rm05IEJibTkgRWJeOSBBYl43PiIpLnZvaWNpbmcoKS5zKCJnbV9lcGlhbm8xIikuZngoIlJldmVyYiIpCmJhc3M6IG5vdGUoIjxmMSBiYjEgZWIxIGFiMT4iKS5zKCJnbV9hY291c3RpY19iYXNzIikKbWFzdGVyLmZ4KCJMaW1pdGVyIik%3D"
+    title="TuttiCode player: lo-fi chords"
+    allow="autoplay"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    style="border: 0; width: 100%; height: 260px"
+  ></iframe>
+
+  <h2>The markup</h2>
+  <pre>&lt;iframe
+  src="https://tuttidaw.com/embed/code?theme=dark#c2V0Y3BtKDIwKQpkcnVtczog..."
+  title="TuttiCode player"
+  allow="autoplay"
+  loading="lazy"
+  referrerpolicy="strict-origin-when-cross-origin"
+  style="border: 0; width: 100%; height: 260px"
+&gt;&lt;/iframe&gt;</pre>
+  <p>To control a bare iframe, post <code>{ protocol: 'tuttidaw-embed', version: 1, type: 'play' }</code> to it; see the <a href="https://www.npmjs.com/package/@tuttidaw/embed#postmessage-protocol-v1">postMessage protocol</a>.</p>
+</body>
+</html>

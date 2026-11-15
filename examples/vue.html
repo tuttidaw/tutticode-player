@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vue · @tuttidaw/embed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p><a href="../">← all examples</a></p>
+  <h1>Vue 3</h1>
+  <p>The <code>TuttidawEmbed</code> plugin from <code>@tuttidaw/embed/vue</code> registers <code>&lt;tuttidaw-code&gt;</code> and tells Vue's template compiler it is a custom element. Bind <code>:code</code>; events are <code>@tuttidaw:*</code>.</p>
+
+  <div id="app">
+    <tuttidaw-code :code="program" theme="dark" loops="4" @tuttidaw:ready="status = 'ready'" @tuttidaw:playing="status = 'playing'" @tuttidaw:ended="status = 'ended'"></tuttidaw-code>
+    <button v-for="(code, name) in programs" :key="name" @click="program = code">{{ name }}</button>
+    <span>{{ status }}</span>
+  </div>
+
+  <h2>The app</h2>
+  <pre>import { createApp } from 'vue';
+import { TuttidawEmbed } from '@tuttidaw/embed/vue';
+
+createApp({ data: () =&gt; ({ program: '...', status: 'loading' }) })
+  .use(TuttidawEmbed)
+  .mount('#app');
+
+// template:
+// &lt;tuttidaw-code :code="program" theme="dark" @tuttidaw:ended="onEnded" /&gt;</pre>
+  <p>With single-file components compiled at build time, also set <code>isCustomElement: (tag) =&gt; tag === 'tuttidaw-code'</code> in the Vue plugin's <code>compilerOptions</code>.</p>
+
+  <script type="module">
+    import { createApp } from 'https://esm.sh/vue@3/dist/vue.esm-browser.prod.js';
+    import { TuttidawEmbed } from 'https://esm.sh/@tuttidaw/embed@1/vue';
+
+    const programs = {
+      koto: `setcpm(22)
+koto: n("0 2 4 <7 5> 4 2").scale("D5:minor:pentatonic").s("gm_koto")
+bass: note("<d2 a1 bb1 c2>").s("gm_acoustic_bass")
+pad: chord("<Dm Am Bb C>").voicing().s("gm_pad_warm").gain(0.4)`,
+      house: `setcpm(31)
+drums: s("bd*4, [~ hh]*4, ~ cp ~ cp").bank("tr909")
+bass: note("<[a1 ~ a1 a2] [f1 ~ f1 f2] [c2 ~ c2 c3] [g1 ~ g1 g2]>").s("sawtooth").lpf(600)
+master.fx("Limiter")`,
+    };
+    createApp({ data: () => ({ programs, program: programs.koto, status: 'loading' }) })
+      .use(TuttidawEmbed)
+      .mount('#app');
+  </script>
+</body>
+</html>
