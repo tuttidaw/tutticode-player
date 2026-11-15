@@ -1,4 +1,4 @@
-# Publishes the examples site to GitHub Pages: https://tuttidaw.github.io/embed/
+# Publishes the examples site to GitHub Pages: https://tuttidaw.github.io/tutticode-player/
 name: pages
 
 on:

@@ -12,9 +12,9 @@
 
 Put a playable [TuttiCode](https://tuttidaw.com/code) card in any web page: a short music program (TuttiCode, Strudel-compatible) with a Play button, its code and a *Remix in TuttiCode* link. One script tag and no dependencies. The audio engine never ships to your page: the card is an `<iframe>` on tuttidaw.com that runs the program, and the SDK talks to it with `postMessage`.
 
-[![Four TuttiCode cards: house, lo-fi, koto and acid, with their voices and Play buttons](docs/gallery.png)](https://tuttidaw.github.io/embed/)
+[![Four TuttiCode cards: house, lo-fi, koto and acid, with their voices and Play buttons](docs/gallery.png)](https://tuttidaw.github.io/tutticode-player/)
 
-**Live examples: [tuttidaw.github.io/embed](https://tuttidaw.github.io/embed/)** (click the picture).
+**Live examples: [tuttidaw.github.io/tutticode-player](https://tuttidaw.github.io/tutticode-player/)** (click the picture).
 
 ## Samples
 
@@ -31,12 +31,12 @@ Each program below plays on the live page and opens in the TuttiCode editor.
 
 | Example | Shows | Source |
 | --- | --- | --- |
-| [Gallery](https://tuttidaw.github.io/embed/) | four cards, dark and light themes, `loops`, `show-code` | [source](index.html) |
-| [Script tag](https://tuttidaw.github.io/embed/examples/script-tag.html) | `<script src=".../v1.js">` and one `<tuttidaw-code>` | [source](examples/script-tag.html) |
-| [Iframe only](https://tuttidaw.github.io/embed/examples/iframe.html) | no script at all: the player URL with the program in the fragment | [source](examples/iframe.html) |
-| [Methods and events](https://tuttidaw.github.io/embed/examples/controls.html) | `play()`, `stop()`, `setCode()` and the `tuttidaw:*` events | [source](examples/controls.html) |
-| [React](https://tuttidaw.github.io/embed/examples/react.html) | `<TuttidawCode>` with a ref, no build step (esm.sh) | [source](examples/react.html) |
-| [Vue 3](https://tuttidaw.github.io/embed/examples/vue.html) | the `TuttidawEmbed` plugin and `:code` binding | [source](examples/vue.html) |
+| [Gallery](https://tuttidaw.github.io/tutticode-player/) | four cards, dark and light themes, `loops`, `show-code` | [source](index.html) |
+| [Script tag](https://tuttidaw.github.io/tutticode-player/examples/script-tag.html) | `<script src=".../v1.js">` and one `<tuttidaw-code>` | [source](examples/script-tag.html) |
+| [Iframe only](https://tuttidaw.github.io/tutticode-player/examples/iframe.html) | no script at all: the player URL with the program in the fragment | [source](examples/iframe.html) |
+| [Methods and events](https://tuttidaw.github.io/tutticode-player/examples/controls.html) | `play()`, `stop()`, `setCode()` and the `tuttidaw:*` events | [source](examples/controls.html) |
+| [React](https://tuttidaw.github.io/tutticode-player/examples/react.html) | `<TuttidawCode>` with a ref, no build step (esm.sh) | [source](examples/react.html) |
+| [Vue 3](https://tuttidaw.github.io/tutticode-player/examples/vue.html) | the `TuttidawEmbed` plugin and `:code` binding | [source](examples/vue.html) |
 
 ## Quick start
 

@@ -12,9 +12,9 @@
 
 在任何网页里放一张可以播放的 [TuttiCode](https://tuttidaw.com/code) 卡片：一段简短的音乐程序（TuttiCode，兼容 Strudel），带播放按钮、代码视图和“在 TuttiCode 中改编”链接。只需一个 script 标签，没有任何依赖。音频引擎不会进入你的页面：卡片是 tuttidaw.com 上的一个 `<iframe>`，程序在里面运行，SDK 通过 `postMessage` 和它通信。
 
-[![四张 TuttiCode 卡片：house、lo-fi、古筝和 acid，显示各声部和播放按钮](docs/gallery.png)](https://tuttidaw.github.io/embed/)
+[![四张 TuttiCode 卡片：house、lo-fi、古筝和 acid，显示各声部和播放按钮](docs/gallery.png)](https://tuttidaw.github.io/tutticode-player/)
 
-**在线示例：[tuttidaw.github.io/embed](https://tuttidaw.github.io/embed/)**（点击图片打开）。
+**在线示例：[tuttidaw.github.io/tutticode-player](https://tuttidaw.github.io/tutticode-player/)**（点击图片打开）。
 
 ## 样本
 
@@ -31,12 +31,12 @@
 
 | 示例 | 演示内容 | 源码 |
 | --- | --- | --- |
-| [作品墙](https://tuttidaw.github.io/embed/) | 四张卡片，深色和浅色主题，`loops`、`show-code` | [源码](index.html) |
-| [Script 标签](https://tuttidaw.github.io/embed/examples/script-tag.html) | `<script src=".../v1.js">` 加一个 `<tuttidaw-code>` | [源码](examples/script-tag.html) |
-| [只用 iframe](https://tuttidaw.github.io/embed/examples/iframe.html) | 完全不用脚本：程序放在播放器 URL 的片段里 | [源码](examples/iframe.html) |
-| [方法和事件](https://tuttidaw.github.io/embed/examples/controls.html) | `play()`、`stop()`、`setCode()` 和 `tuttidaw:*` 事件 | [源码](examples/controls.html) |
-| [React](https://tuttidaw.github.io/embed/examples/react.html) | 带 ref 的 `<TuttidawCode>`，无需构建（esm.sh） | [源码](examples/react.html) |
-| [Vue 3](https://tuttidaw.github.io/embed/examples/vue.html) | `TuttidawEmbed` 插件和 `:code` 绑定 | [源码](examples/vue.html) |
+| [作品墙](https://tuttidaw.github.io/tutticode-player/) | 四张卡片，深色和浅色主题，`loops`、`show-code` | [源码](index.html) |
+| [Script 标签](https://tuttidaw.github.io/tutticode-player/examples/script-tag.html) | `<script src=".../v1.js">` 加一个 `<tuttidaw-code>` | [源码](examples/script-tag.html) |
+| [只用 iframe](https://tuttidaw.github.io/tutticode-player/examples/iframe.html) | 完全不用脚本：程序放在播放器 URL 的片段里 | [源码](examples/iframe.html) |
+| [方法和事件](https://tuttidaw.github.io/tutticode-player/examples/controls.html) | `play()`、`stop()`、`setCode()` 和 `tuttidaw:*` 事件 | [源码](examples/controls.html) |
+| [React](https://tuttidaw.github.io/tutticode-player/examples/react.html) | 带 ref 的 `<TuttidawCode>`，无需构建（esm.sh） | [源码](examples/react.html) |
+| [Vue 3](https://tuttidaw.github.io/tutticode-player/examples/vue.html) | `TuttidawEmbed` 插件和 `:code` 绑定 | [源码](examples/vue.html) |
 
 ## 快速开始
 
