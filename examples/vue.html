@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vue · @tuttidaw/embed</title>
+  <title>Vue · @tuttidaw/tutticode-player</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <p><a href="../">← all examples</a></p>
   <h1>Vue 3</h1>
-  <p>The <code>TuttidawEmbed</code> plugin from <code>@tuttidaw/embed/vue</code> registers <code>&lt;tuttidaw-code&gt;</code> and tells Vue's template compiler it is a custom element. Bind <code>:code</code>; events are <code>@tuttidaw:*</code>.</p>
+  <p>The <code>TuttidawEmbed</code> plugin from <code>@tuttidaw/tutticode-player/vue</code> registers <code>&lt;tuttidaw-code&gt;</code> and tells Vue's template compiler it is a custom element. Bind <code>:code</code>; events are <code>@tuttidaw:*</code>.</p>
 
   <div id="app">
     <tuttidaw-code :code="program" theme="dark" loops="4" @tuttidaw:ready="status = 'ready'" @tuttidaw:playing="status = 'playing'" @tuttidaw:ended="status = 'ended'"></tuttidaw-code>
@@ -19,7 +19,7 @@
 
   <h2>The app</h2>
   <pre>import { createApp } from 'vue';
-import { TuttidawEmbed } from '@tuttidaw/embed/vue';
+import { TuttidawEmbed } from '@tuttidaw/tutticode-player/vue';
 
 createApp({ data: () =&gt; ({ program: '...', status: 'loading' }) })
   .use(TuttidawEmbed)
@@ -31,7 +31,7 @@ createApp({ data: () =&gt; ({ program: '...', status: 'loading' }) })
 
   <script type="module">
     import { createApp } from 'https://esm.sh/vue@3/dist/vue.esm-browser.prod.js';
-    import { TuttidawEmbed } from 'https://esm.sh/@tuttidaw/embed@1/vue';
+    import { TuttidawEmbed } from 'https://esm.sh/@tuttidaw/tutticode-player@1/vue';
 
     const programs = {
       koto: `setcpm(22)

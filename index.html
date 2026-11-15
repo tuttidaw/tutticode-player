@@ -3,24 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@tuttidaw/embed: playable music code in any web page</title>
-  <meta name="description" content="Live examples of @tuttidaw/embed: TuttiCode music cards you can play, read and remix, embedded with one script tag.">
+  <title>@tuttidaw/tutticode-player: playable music code in any web page</title>
+  <meta name="description" content="Live examples of @tuttidaw/tutticode-player: TuttiCode music cards you can play, read and remix, embedded with one script tag.">
   <link rel="stylesheet" href="examples/style.css">
   <script src="https://tuttidaw.com/embed/v1.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>@tuttidaw/embed</h1>
+    <h1>@tuttidaw/tutticode-player</h1>
     <p>Put a playable <a href="https://tuttidaw.com/code">TuttiCode</a> card in any web page: a short music program with a Play button, its code and a Remix link. One script tag, no dependencies; the audio engine runs in the card's iframe, never in your page.</p>
     <nav>
       <a href="https://github.com/tuttidaw/tutticode-player">GitHub</a>
-      <a href="https://www.npmjs.com/package/@tuttidaw/embed">npm</a>
+      <a href="https://www.npmjs.com/package/@tuttidaw/tutticode-player">npm</a>
       <a href="examples/script-tag.html">Script tag</a>
       <a href="examples/iframe.html">Iframe only</a>
       <a href="examples/controls.html">Methods and events</a>
       <a href="examples/react.html">React</a>
       <a href="examples/vue.html">Vue</a>
     </nav>
+    <p class="lang">
+      <label for="lang">Card language (<code>lang</code> attribute):</label>
+      <select id="lang">
+        <option value="">the visitor's (default)</option>
+        <option value="en">English</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW">繁體中文</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="es">Español</option>
+        <option value="pt-BR">Português (Brasil)</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+        <option value="ar">العربية</option>
+      </select>
+    </p>
   </header>
 
   <main class="gallery">
@@ -58,6 +75,17 @@ acid: note("c2 c3 eb2 c2 g2 c2 bb1 c3").s("sawtooth").lpf(sine.range(300, 2400).
 master.fx("Limiter")'></tuttidaw-code>
     </section>
   </main>
+
+  <script>
+    // <tuttidaw-code lang="ja"> sets a card's UI language; without it the
+    // card follows the visitor's browser. Changing it reloads the card.
+    document.getElementById('lang').addEventListener('change', (event) => {
+      for (const card of document.querySelectorAll('tuttidaw-code')) {
+        if (event.target.value) card.setAttribute('lang', event.target.value);
+        else card.removeAttribute('lang');
+      }
+    });
+  </script>
 
   <footer>
     <p>Write your own at <a href="https://tuttidaw.com/code">tuttidaw.com/code</a>, then <em>Embed</em> gives you the snippet. Source of these pages: <a href="https://github.com/tuttidaw/tutticode-player">tuttidaw/tutticode-player</a>. MIT.</p>

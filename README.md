@@ -1,10 +1,10 @@
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
-<h1 align="center">@tuttidaw/embed</h1>
+<h1 align="center">@tuttidaw/tutticode-player</h1>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@tuttidaw/embed"><img src="https://img.shields.io/npm/v/@tuttidaw/embed?color=111111&label=npm" alt="npm"></a>
-  <a href="https://bundlephobia.com/package/@tuttidaw/embed"><img src="https://img.shields.io/bundlephobia/minzip/@tuttidaw/embed?color=111111" alt="size"></a>
+  <a href="https://www.npmjs.com/package/@tuttidaw/tutticode-player"><img src="https://img.shields.io/npm/v/@tuttidaw/tutticode-player?color=111111&label=npm" alt="npm"></a>
+  <a href="https://bundlephobia.com/package/@tuttidaw/tutticode-player"><img src="https://img.shields.io/bundlephobia/minzip/@tuttidaw/tutticode-player?color=111111" alt="size"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licence-MIT-111111" alt="MIT"></a>
 </p>
 
@@ -48,21 +48,27 @@ drums: s("bd*4, [~ hh]*4, ~ cp ~ cp").bank("tr909")
 bass: note("<[a1 ~ a1 a2] [f1 ~ f1 f2] [c2 ~ c2 c3] [g1 ~ g1 g2]>").s("sawtooth").lpf(600)'></tuttidaw-code>
 ```
 
+The card's buttons and messages follow the visitor's browser language; `lang` fixes one: `en`, `zh-CN`, `zh-TW`, `ja`, `ko`, `es`, `pt-BR`, `de`, `fr`, `it`, `ar` (try the switcher on the [live page](https://tuttidaw.github.io/tutticode-player/)).
+
+```html
+<tuttidaw-code lang="ja" code='note("c e g b").s("piano")'></tuttidaw-code>
+```
+
 ## npm
 
 ```sh
-npm install @tuttidaw/embed
+npm install @tuttidaw/tutticode-player
 ```
 
 ```ts
-import { defineTuttidawCode } from '@tuttidaw/embed';
+import { defineTuttidawCode } from '@tuttidaw/tutticode-player';
 defineTuttidawCode(); // registers <tuttidaw-code>
 
-import { TuttidawCode } from '@tuttidaw/embed/react'; // React 17+
-import { TuttidawEmbed } from '@tuttidaw/embed/vue'; // Vue 3 plugin
+import { TuttidawCode } from '@tuttidaw/tutticode-player/react'; // React 17+
+import { TuttidawEmbed } from '@tuttidaw/tutticode-player/vue'; // Vue 3 plugin
 ```
 
-Attributes (`theme`, `loops`, `show-code`, `height`, `lang`, `snippet`, `src-fragment`), methods, events, the postMessage protocol and security notes: the [package README on npm](https://www.npmjs.com/package/@tuttidaw/embed).
+Attributes (`theme`, `loops`, `show-code`, `height`, `lang`, `snippet`, `src-fragment`), methods, events, the postMessage protocol and security notes: the [package README on npm](https://www.npmjs.com/package/@tuttidaw/tutticode-player).
 
 ## Make your own
 

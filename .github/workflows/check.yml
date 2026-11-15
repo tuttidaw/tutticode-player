@@ -28,9 +28,16 @@ jobs:
           node-version: 22
       - name: Pages and links
         run: node scripts/validate.mjs
-      - name: Programs compile
+      # ...with today's device names (an old one plays, with a
+      # device/legacy-name warning; examples must not carry one).
+      - name: Programs compile, with current device names
         run: |
           for f in out/programs/*.tc; do
             echo "== $f"
-            npx -y tutticode@latest check "$f"
+            out="$(npx -y tutticode@latest check "$f" 2>&1)" || { echo "$out"; exit 1; }
+            echo "$out"
+            if grep -q 'device/legacy-name' <<<"$out"; then
+              echo "::error file=$f::uses an old device name"
+              exit 1
+            fi
           done

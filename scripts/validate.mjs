@@ -33,13 +33,16 @@ for (const page of pages) {
   for (const m of html.matchAll(/\scode='([^']*)'/g)) keep(page, m[1]);
   for (const m of html.matchAll(/`(setcpm\([^`]*)`/g)) keep(page, m[1]);
   for (const m of html.matchAll(/src="https:\/\/tuttidaw\.com\/embed\/code\?[^#"]*#([^"]+)"/g)) {
+    let code = '';
     try {
-      keep(page, Buffer.from(decodeURIComponent(m[1]), 'base64').toString('utf8'));
+      code = Buffer.from(decodeURIComponent(m[1]), 'base64').toString('utf8');
     } catch {
-      errors.push(`${page}: iframe fragment does not decode`);
+      // reported below
     }
+    if (/^setcpm\(/.test(code.trim())) keep(page, code);
+    else errors.push(`${page}: an iframe fragment does not decode to a program`);
   }
-  const usesSdk = /tuttidaw\.com\/embed\/v1\.js|@tuttidaw\/embed@1/.test(html);
+  const usesSdk = /tuttidaw\.com\/embed\/v1\.js|@tuttidaw\/tutticode-player@1/.test(html);
   const usesIframe = /tuttidaw\.com\/embed\/code/.test(html);
   if (!usesSdk && !usesIframe) errors.push(`${page}: neither the SDK nor the player iframe`);
 }
